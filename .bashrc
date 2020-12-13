@@ -26,3 +26,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # yay -S icons-in-terminal
 source /usr/share/icons-in-terminal/icons_bash.sh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
