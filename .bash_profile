@@ -16,3 +16,5 @@ export PATH=$PATH:/opt/flutter/bin
 export TODOIST_API_KEY="$(pass Todoist/API)"
 # FZF
 export FZF_DEFAULT_OPTS="--reverse --bind ctrl-d:half-page-down,ctrl-u:half-page-up,ctrl-alt-d:preview-half-page-down,ctrl-alt-u:preview-half-page-up"
+# Increase bash history size
+export HISTFILESIZE=10000
