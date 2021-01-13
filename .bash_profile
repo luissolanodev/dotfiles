@@ -3,10 +3,14 @@ if [ -f ~/.bashrc ]; then
 fi
 
 export EDITOR=nvim
-export GOPATH=/home/luis/Programming/go
 export JAVA_HOME=/usr/lib/jvm/default/
 export JAVAFX_11=/usr/lib/jvm/java-11-openjdk/lib/
 export ANDROID_SDK_ROOT=/opt/android-sdk
+
+# AWS
+export AWS_PROFILE=luis-solano-business
+export AWS_CONFIG_FILE=~/.config/aws/config
+export AWS_SHARED_CREDENTIALS_FILE=~/.config/aws/credentials
 
 # Intel hardware acceleration
 export LIBVA_DRIVER_NAME=i965
