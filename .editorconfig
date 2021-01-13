@@ -16,6 +16,6 @@ tab_width = 4
 indent_style = space
 indent_size = 4
 
-[*.{html,css,scss,js,jsx,jsp,md,markdown,dart,yml,yaml,json}]
+[*.{html,css,scss,js,jsx,jsp,md,markdown,dart,yml,yaml,json,fxml}]
 indent_style = space
 indent_size = 2
