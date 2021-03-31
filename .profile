@@ -3,6 +3,7 @@ export JAVA_HOME=/usr/lib/jvm/default/
 export JAVAFX_11=/usr/lib/jvm/java-11-openjdk/lib/
 export ANDROID_SDK_ROOT=/opt/android-sdk
 export BAT_THEME=base16
+export PATH=$PATH:~/.local/bin
 
 # AWS
 export AWS_PROFILE=luis-solano-business
