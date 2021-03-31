@@ -1,0 +1,40 @@
+add_newline = false
+
+[character]
+success_symbol = "[](bold blue)"
+error_symbol = "[](bold red)"
+
+[directory]
+format = "[$path]($style) [$read_only]($read_only_style)"
+
+[username]
+show_always = true
+
+[aws]
+disabled = false
+format = 'on [$symbol$profile (\($region\))]($style) '
+symbol = " "
+
+[dart]
+symbol = " "
+
+[java]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[python]
+symbol = " "
+
+[dotnet]
+format = '[$symbol$version ($tfm)]($style) '
+
+[git_branch]
+symbol = " "
+
+[git_status]
+
