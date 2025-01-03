@@ -1,0 +1,8 @@
+font-family = GeistMono NF
+font-size = 14
+font-style = regular
+font-thicken = true
+theme = tokyonight
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
