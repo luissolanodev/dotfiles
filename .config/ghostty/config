@@ -3,14 +3,20 @@ font-size = 14
 font-thicken = true
 
 adjust-cell-width = -6%
+adjust-underline-thickness = 1
 
 theme = tokyonight
 
 cursor-style = block
+cursor-color = turquoise
 cursor-style-blink = false
 shell-integration-features = no-cursor
+mouse-hide-while-typing = true
 
 macos-icon = custom-style
 macos-icon-frame = plastic
 macos-icon-ghost-color = white
 macos-icon-screen-color = black
+
+window-padding-x = 0
+window-padding-y = 0
