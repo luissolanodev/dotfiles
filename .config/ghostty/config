@@ -1,8 +1,16 @@
 font-family = GeistMono NF
 font-size = 14
-font-style = regular
 font-thicken = true
+
+adjust-cell-width = -6%
+
 theme = tokyonight
+
 cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
+
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-ghost-color = white
+macos-icon-screen-color = black
