@@ -1,1 +1,1 @@
-bind --preset -k nul forward-char
+bind --preset ctrl-space forward-char
