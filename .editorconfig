@@ -12,10 +12,10 @@ trim_trailing_whitespace = true
 indent_style = tab
 tab_width = 4
 
-[*.{py,qml,prisma,lua}]
+[*.{py,qml,prisma}]
 indent_style = space
 indent_size = 4
 
-[*.{html,css,scss,js,jsx,ts,tsx,astro,jsp,md,markdown,dart,yml,yaml,json,fxml,prisma}]
+[*.{html,css,scss,js,jsx,ts,tsx,astro,jsp,md,markdown,dart,yml,yaml,json,fxml,prisma,lua}]
 indent_style = space
 indent_size = 2
