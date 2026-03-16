@@ -1,4 +1,5 @@
 set -gx EDITOR nvim
+set -U nvm_default_version lts/krypton
 if test (uname) = Darwin
     set -gx PAGER bat
     set -gx GIT_PAGER "bat --style=plain"
