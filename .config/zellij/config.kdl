@@ -1,2 +1,50 @@
 theme "tokyo-night-dark"
+
 pane_frames false
+default_layout "default"
+
+keybinds {
+  shared_except "locked" {
+    bind "Ctrl y" {
+        LaunchOrFocusPlugin "https://github.com/Nacho114/harpoon/releases/latest/download/harpoon.wasm" {
+            floating true; move_to_focused_tab true;
+        }
+    }
+    bind "Ctrl b" { SwitchToMode "Tmux"; }
+    unbind "Ctrl p" "Ctrl n" "Ctrl s" "Ctrl o" "Ctrl t" "Ctrl h" "Ctrl g"
+    unbind "Alt f" "Alt n" "Alt i" "Alt o" "Alt h" "Alt Left" "Alt l" "Alt Right" "Alt j" "Alt Down" "Alt k" "Alt Up" "Alt =" "Alt +" "Alt -" "Alt [" "Alt ]" "Alt p" "Alt Shift p"
+  }
+
+  tmux {
+    bind "Esc" "Enter" "Ctrl b" { SwitchToMode "Normal"; }
+
+    bind "Ctrl h" { Resize "Left"; }
+    bind "Ctrl l" { Resize "Right"; }
+    bind "Ctrl j" { Resize "Down"; }
+    bind "Ctrl k" { Resize "Up"; }
+
+    bind "f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+    bind "s" { NewPane "stacked"; SwitchToMode "Normal"; }
+    bind "b" { BreakPane; SwitchToMode "Normal"; }
+    bind "{" { BreakPaneLeft; SwitchToMode "Normal"; }
+    bind "}" { BreakPaneRight; SwitchToMode "Normal"; }
+
+    bind "1" { GoToTab 1; SwitchToMode "Normal"; }
+    bind "2" { GoToTab 2; SwitchToMode "Normal"; }
+    bind "3" { GoToTab 3; SwitchToMode "Normal"; }
+    bind "4" { GoToTab 4; SwitchToMode "Normal"; }
+    bind "5" { GoToTab 5; SwitchToMode "Normal"; }
+    bind "6" { GoToTab 6; SwitchToMode "Normal"; }
+    bind "7" { GoToTab 7; SwitchToMode "Normal"; }
+    bind "8" { GoToTab 8; SwitchToMode "Normal"; }
+    bind "9" { GoToTab 9; SwitchToMode "Normal"; }
+
+    bind "H" { MovePane "Left"; }
+    bind "J" { MovePane "Down"; }
+    bind "K" { MovePane "Up"; }
+    bind "L" { MovePane "Right"; }
+
+    bind "<" { MoveTab "Left"; }
+    bind ">" { MoveTab "Right"; }
+  }
+}
