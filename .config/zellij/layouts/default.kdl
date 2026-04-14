@@ -11,7 +11,7 @@ layout {
 
                 format_left   " {mode} #[fg=#6c7086]│ #[fg=#eba0ac] {session}"
                 format_center "{tabs}"
-                format_right  "{command_battery} #[fg=#6c7086]│ {datetime}"
+                format_right  "{command_online} #[fg=#6c7086]│ {command_battery} #[fg=#6c7086]│ {datetime}"
                 format_space  ""
 
                 format_hide_on_overlength "true"
@@ -23,6 +23,11 @@ layout {
                 tab_sync_indicator       " "
                 tab_floating_indicator   " 󰉈"
                 tab_separator "#[fg=#6C7086] │ "
+
+                command_online_command    "sh -c 'ping -c1 -W1 1.1.1.1 >/dev/null 2>&1 && echo \"#[fg=#cba6f7]󰖩 on\" || echo \"#[fg=#ed8796]󰖪 off\"'"
+                command_online_format     "{stdout}"
+                command_online_interval   "10"
+                command_online_rendermode "dynamic"
 
                 command_battery_command    "sh -c \"~/.config/zellij/scripts/battstat -f '{i} {p}'\""
                 command_battery_format     "#[fg=#f5c2e7]{stdout}"
