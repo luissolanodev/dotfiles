@@ -45,7 +45,7 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "C"]
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "C", "M", "N", "D", "F"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -66,12 +66,12 @@ on-mode-changed = []
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 0
-    inner.vertical =   0
-    outer.left =       0
-    outer.bottom =     0
-    outer.top =        0
-    outer.right =      0
+    inner.horizontal = 6
+    inner.vertical =   6
+    outer.left =       6
+    outer.bottom =     6
+    outer.top =        6
+    outer.right =      6
 
 # 'main' binding mode declaration
 # See:sajoax https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -159,7 +159,17 @@ on-mode-changed = []
     alt-c = 'workspace C'
     alt-shift-c = 'move-node-to-workspace C'
 
-    alt-cmd-c = 'exec-and-forget open -a Claude'
+    alt-m = 'workspace M'
+    alt-shift-m = 'move-node-to-workspace M'
+
+    alt-n = 'workspace N'
+    alt-shift-n = 'move-node-to-workspace N'
+
+    alt-d = 'workspace D'
+    alt-shift-d = 'move-node-to-workspace D'
+
+    alt-f = 'workspace F'
+    alt-shift-f = 'move-node-to-workspace F'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -176,7 +186,3 @@ on-mode-changed = []
     alt-shift-j = ['join-with down', 'mode main']
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
-
-[[on-window-detected]]
-    if.app-name-regex-substring = 'Codex'
-    run = 'move-node-to-workspace C'
