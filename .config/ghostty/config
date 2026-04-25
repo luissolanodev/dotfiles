@@ -13,12 +13,10 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 mouse-hide-while-typing = true
 
-macos-icon = custom-style
-macos-icon-frame = plastic
-macos-icon-ghost-color = white
-macos-icon-screen-color = black
-
-window-padding-x = 0
-window-padding-y = 0
-
 macos-option-as-alt = left
+
+window-theme = system
+window-padding-x = 18
+window-padding-y = 9
+macos-icon = holographic
+macos-icon-frame = beige
