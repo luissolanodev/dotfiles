@@ -7,7 +7,7 @@ config-version = 2
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = ['exec-and-forget sketchybar']
+after-startup-command = []
 
 exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
@@ -74,7 +74,7 @@ on-mode-changed = []
     inner.vertical =   6
     outer.left =       6
     outer.bottom =     6
-    outer.top =        19
+    outer.top =        6
     outer.right =      6
 
 # 'main' binding mode declaration
@@ -171,6 +171,12 @@ on-mode-changed = []
 
     alt-f = 'workspace F'
     alt-shift-f = ['move-node-to-workspace F', 'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=F']
+
+[workspace-to-monitor-force-assignment]
+6 = 'secondary'
+7 = 'secondary'
+8 = 'secondary'
+9 = 'secondary'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
