@@ -1,15 +1,14 @@
+auto-update-channel = tip
 font-family = GeistMono NF
 font-size = 14
 font-thicken = true
 
-adjust-cell-width = -6%
 adjust-underline-thickness = 1
 
-theme = tokyonight
+theme = dark:TokyoNight,light:TokyoNight Day
+
 
 cursor-style = block
-cursor-color = turquoise
-cursor-style-blink = false
 shell-integration-features = no-cursor
 mouse-hide-while-typing = true
 
@@ -18,5 +17,4 @@ macos-option-as-alt = left
 window-theme = system
 window-padding-x = 18
 window-padding-y = 9
-macos-icon = holographic
-macos-icon-frame = beige
+macos-icon = glass
