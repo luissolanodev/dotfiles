@@ -1,7 +1,8 @@
-theme "tokyo-night-dark"
+theme_dark "tokyo-night-dark"
+theme_light "catppuccin-latte"
 
+default_layout "compact"
 pane_frames false
-default_layout "default"
 
 keybinds {
   shared_except "locked" {
