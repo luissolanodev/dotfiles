@@ -24,6 +24,9 @@ keybinds {
     bind "Ctrl j" { Resize "Down"; }
     bind "Ctrl k" { Resize "Up"; }
 
+    bind "d" { Detach; }
+    bind "w" { LaunchOrFocusPlugin "session-manager" { floating true; move_to_focused_tab true; }; SwitchToMode "Normal"; }
+
     bind "f" { ToggleFloatingPanes; SwitchToMode "Normal"; }
     bind "s" { NewPane "stacked"; SwitchToMode "Normal"; }
     bind "b" { BreakPane; SwitchToMode "Normal"; }
