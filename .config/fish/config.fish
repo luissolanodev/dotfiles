@@ -19,7 +19,7 @@ end
 
 if status is-interactive
     if not set -q ZELLIJ
-        zellij
+        zellij attach -c main
     end
 
     abbr --erase dst dss dcd dps # Clean if exists
