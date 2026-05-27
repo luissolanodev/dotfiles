@@ -1,7 +1,7 @@
 theme_dark "tokyo-night-dark"
 theme_light "catppuccin-latte"
 
-default_layout "compact"
+default_layout "custom"
 pane_frames false
 
 keybinds {
