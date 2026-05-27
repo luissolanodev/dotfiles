@@ -12,6 +12,7 @@
     ],
     "defaultMode": "default"
   },
+  "model": "sonnet",
   "hooks": {
     "PreToolUse": [
       {
@@ -139,10 +140,9 @@
     "command": "bash \"/Users/luis.solano/.claude/plugins/marketplaces/caveman/hooks/caveman-statusline.sh\""
   },
   "enabledPlugins": {
-    "superpowers@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": false,
     "caveman@caveman": true,
-    "vercel@claude-plugins-official": true,
-    "vercel-plugin@vercel": true,
+    "vercel@claude-plugins-official": false,
     "figma@claude-plugins-official": true,
     "obsidian@obsidian-skills": true
   },
@@ -151,7 +151,8 @@
       "source": {
         "source": "github",
         "repo": "JuliusBrussee/caveman"
-      }
+      },
+      "autoUpdate": true
     },
     "claude-plugins-official": {
       "source": {
@@ -166,5 +167,7 @@
       }
     }
   },
-  "alwaysThinkingEnabled": false
+  "alwaysThinkingEnabled": false,
+  "effortLevel": "medium",
+  "editorMode": "vim"
 }
