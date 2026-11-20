@@ -1,0 +1,9 @@
+# update brew, zsh plugins and macOS
+echo 'updating homebrew'
+brew update && brew upgrade && brew cleanup
+
+echo 'updating zsh plugins'
+antidote update
+
+echo 'checking Apple updates'
+/usr/sbin/softwareupdate -ia

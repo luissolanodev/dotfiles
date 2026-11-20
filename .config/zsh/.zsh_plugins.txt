@@ -1,0 +1,11 @@
+# Runs compinit once all plugins have added their completions.
+mattmc3/ez-compinit
+
+zsh-users/zsh-completions kind:fpath path:src
+ohmyzsh/ohmyzsh path:lib/git.zsh
+ohmyzsh/ohmyzsh path:plugins/git
+zsh-users/zsh-autosuggestions
+olets/zsh-abbr
+
+# Must load last.
+zsh-users/zsh-syntax-highlighting

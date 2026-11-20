@@ -1,0 +1,6 @@
+# fzf file picker, open in nvim
+local file
+file=$(fd --type f | fzf \
+  --preview 'bat --color=always --line-range :500 {}' \
+  --preview-window 'right:60%' \
+  --bind 'ctrl-/:toggle-preview') && nvim "$file"
