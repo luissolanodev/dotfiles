@@ -1,165 +1,85 @@
 # dotfiles
 
-Personal configuration files for macOS and Linux, managed with a bare git repo.
+My macOS config for fish and zsh, kept in a bare git repo with `$HOME` as the work tree.
+I use fish at home and zsh at work, so both shells load the same environment and get
+the same highlighting, autosuggestions, completions, abbreviations, prompt (starship)
+and `z` (zoxide).
 
------
-
-## Prerequisites
-
-Make sure you have `git` and `curl` available before starting.
-
------
-
-## Clone dotfiles
+## Install
 
 ```bash
-git clone --bare https://github.com/luissolanodev/dotfiles.git $HOME/.dotfiles
-/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout
-/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME config --local status.showUntrackedFiles no
-/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME push --set-upstream origin main
+# 1. Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 2. Dotfiles
+git clone --bare https://github.com/luissolanodev/dotfiles.git ~/.dotfiles
+git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout
+git --git-dir=$HOME/.dotfiles --work-tree=$HOME config status.showUntrackedFiles no
+
+# 3. Packages
+brew bundle --global                                      # shared
+brew bundle --file ~/.config/homebrew/Brewfile.personal   # personal Mac only
 ```
 
-After fish and fisher are installed (see below), the `dot` command will be available as an alias for managing the repo.
+If `checkout` fails because files already exist, move them aside and run it again.
 
------
-
-## Fish shell
-
-### Install fish
-
-**macOS:**
+### fish
 
 ```bash
-brew install fish
+echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
+fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update'
 ```
 
-**Linux:**
+### zsh
+
+Plugins install themselves on first launch. For Node, install nvm into `~/.config/nvm`:
 
 ```bash
-apt install -y fish
-chsh -s $(which fish)
+PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash'
 ```
 
-### Install fisher
+## Layout
+
+```text
+~/.zshenv                    points zsh at ~/.config/zsh
+~/.config/
+├── shell/env.sh             shared env vars, sourced by both shells
+├── shell/local.sh           machine-specific overrides (untracked)
+├── fish/                    config.fish, conf.d/, functions/, fish_plugins
+├── zsh/                     .zshrc, .zprofile, .zsh_plugins.txt, functions/
+├── homebrew/                Brewfile, Brewfile.personal
+├── ghostty/  aerospace/  borders/  bat/
+```
+
+The repo tracks the plugin lists, not the plugins. fisher installs into
+`~/.local/share/fisher` and antidote into `~/.local/share/antidote`.
+
+## Daily use
+
+`dot` is git for this repo. Both shells have the same abbreviations:
+
+| Abbr   | Expands to                  |
+| ------ | --------------------------- |
+| `dst`  | `dot status`                |
+| `dss`  | `dot status --short`        |
+| `da`   | `dot add`                   |
+| `dd`   | `dot diff`                  |
+| `dcd`  | `dot commit -m`             |
+| `dps`  | `dot push`                  |
+| `dlog` | `dot log --oneline --graph` (decorated, colored) |
+
+`dot status` hides untracked files, so add new ones by path: `dot add ~/.config/foo`.
+
+`update` upgrades Homebrew packages, shell plugins and macOS.
+
+## Machine-specific config
+
+Anything private or tied to one machine (work certs, proxies, tokens) goes in
+`~/.config/shell/local.sh`. Git ignores it, and both shells load it after `env.sh`,
+so it can override shared values. Use plain `export KEY=value` lines; fish reads
+this file too.
 
 ```bash
-fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+export NODE_EXTRA_CA_CERTS="$HOME/certs/company.pem"
 ```
-
-### Install plugins
-
-```bash
-fisher update
-```
-
-This reads `~/.config/fish/fish_plugins` and installs all plugins automatically.
-
------
-
-## CLI Tools
-
-### Neovim
-
-**macOS:**
-
-```bash
-brew install neovim
-```
-
-**Linux (ARM):**
-
-```bash
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.appimage
-chmod +x nvim-linux-arm64.appimage
-mv nvim-linux-arm64.appimage /usr/local/bin/nvim
-```
-
-### bat
-
-**macOS:**
-
-```bash
-brew install bat
-```
-
-**Linux:**
-
-```bash
-apt install -y bat
-# Note: on Linux the binary is called `batcat`, the dotfiles handle this automatically
-```
-
-### zoxide
-
-**macOS:**
-
-```bash
-brew install zoxide
-```
-
-**Linux:**
-
-```bash
-apt install -y zoxide
-```
-
-### tree
-
-**macOS:**
-
-```bash
-brew install tree
-```
-
-**Linux:**
-
-```bash
-apt install -y tree
-```
-
-### nvm
-
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-```
-
-### zellij
-
-**macOS:**
-
-```bash
-brew install zellij
-```
-
-**Linux:**
-
-```bash
-curl -L https://github.com/zellij-org/zellij/releases/latest/download/zellij-x86_64-unknown-linux-musl.tar.gz | tar -xz
-mv zellij /usr/local/bin/
-```
-
------
-
-## Git configuration
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "your@email.com"
-```
-
------
-
-## Notes
-
-### macOS vs Linux differences
-
-These dotfiles are designed to work on both platforms. The `~/.config/fish/conf.d/platform.fish` file handles OS-specific configuration automatically, including:
-
-- `XDG_CACHE_HOME` — `~/Library/Caches` on macOS, `~/.cache` on Linux
-- `PNPM_HOME` — `~/Library/pnpm` on macOS, `~/.local/share/pnpm` on Linux
-- `bat` vs `batcat` binary name on Linux
-- Homebrew environment (macOS only)
-
-### fish_variables
-
-The `~/.config/fish/fish_variables` file is auto-generated by fish and is intentionally not tracked in this repo. Environment variables are managed through `conf.d/` files instead.
