@@ -1,0 +1,28 @@
+# Install with: brew bundle --global
+
+# Shell
+brew "fish"
+brew "antidote"
+brew "starship"
+brew "zoxide"
+brew "bat"
+brew "fzf"
+brew "fd"
+brew "tree"
+brew "neovim"
+
+# Dev
+brew "gh"
+brew "pnpm"
+brew "awscli"
+
+# Apps
+cask "ghostty"
+cask "claude-code@latest"
+cask "codex"
+
+# Fonts
+cask "font-blex-mono-nerd-font"
+cask "font-code-new-roman-nerd-font"
+cask "font-geist-mono-nerd-font"
+cask "font-inter"

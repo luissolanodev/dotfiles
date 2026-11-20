@@ -1,0 +1,32 @@
+# Personal Mac only. Install with:
+#   brew bundle --file ~/.config/homebrew/Brewfile.personal
+
+cask "chatgpt"
+cask "claude"
+cask "discord"
+cask "docker-desktop"
+cask "fantastical"
+cask "google-chrome"
+cask "google-drive"
+cask "keyboardcleantool"
+cask "logi-options+"
+cask "monitorcontrol"
+cask "mos"
+cask "obsidian"
+cask "slack"
+cask "spotify"
+cask "swish"
+cask "telegram"
+cask "whatsapp"
+cask "wispr-flow"
+cask "zoom"
+
+at_exit do
+  puts <<~MSG
+
+    Install these from the App Store:
+      - Things 3
+      - Vimari
+      - AdBlock Pro
+  MSG
+end
