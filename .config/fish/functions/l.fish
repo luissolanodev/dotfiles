@@ -1,3 +1,3 @@
-function l
-    ls -la -h --color=auto $argv
+function l --description 'long listing including hidden files'
+    ls -la $argv
 end

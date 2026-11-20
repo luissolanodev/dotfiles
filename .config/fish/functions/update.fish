@@ -1,17 +1,13 @@
-function update -d "update brew, fish, fisher and mac app store"
-    echo 'start updating ...'
-
+function update -d "update brew, fish plugins, completions and macOS"
     echo 'updating homebrew'
     brew update
-    brew upgrade
-    brew cleanup
+    and brew upgrade
+    and brew cleanup
 
     echo 'updating fish shell'
-    fisher
+    functions -q fisher; and fisher update
     fish_update_completions
 
-    echo 'checking Apple Updates'
+    echo 'checking Apple updates'
     /usr/sbin/softwareupdate -ia
-
-    exit 0
 end

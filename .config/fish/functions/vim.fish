@@ -1,3 +1,3 @@
-function vi -d 'vi alias for nvim'
+function vim -d 'vim alias for nvim'
     nvim $argv
 end

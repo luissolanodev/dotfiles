@@ -1,7 +1,8 @@
 # >>> zerobrew >>>
 # zerobrew
-set -gx ZEROBREW_DIR "/Users/luis.solano/.zerobrew"
-set -gx ZEROBREW_BIN "/Users/luis.solano/.zerobrew/bin"
+test -d $HOME/.zerobrew; or return
+set -gx ZEROBREW_DIR "$HOME/.zerobrew"
+set -gx ZEROBREW_BIN "$HOME/.zerobrew/bin"
 set -gx ZEROBREW_ROOT "/opt/zerobrew"
 set -gx ZEROBREW_PREFIX "/opt/zerobrew"
 if set -q PKG_CONFIG_PATH
