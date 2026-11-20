@@ -23,7 +23,8 @@
     "vercel@claude-plugins-official": true,
     "figma@claude-plugins-official": true,
     "obsidian@obsidian-skills": true,
-    "prismantis@prismantis": true
+    "prismantis@prismantis": true,
+    "humanizer-blader@anthropic-plugin-directory": true
   },
   "extraKnownMarketplaces": {
     "caveman": {
