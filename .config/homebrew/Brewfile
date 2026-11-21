@@ -10,6 +10,8 @@ brew "fzf"
 brew "fd"
 brew "tree"
 brew "neovim"
+brew "tmux"
+brew "bash"
 
 # Dev
 brew "gh"

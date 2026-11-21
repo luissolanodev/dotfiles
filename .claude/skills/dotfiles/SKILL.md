@@ -35,11 +35,12 @@ so new files never show up in `status` until added.
 | zsh entry point | `~/.zshenv` (only sets `ZDOTDIR`, sources `$ZDOTDIR/.zshenv`) |
 | zsh | `~/.config/zsh/` (`.zshenv`, `.zprofile`, `.zshrc`, `.zsh_plugins.txt`, `functions/`) |
 | Packages | `~/.config/homebrew/Brewfile` (shared), `Brewfile.personal` (personal Mac only) |
-| Prompt | starship, `~/.config/starship.toml` if one exists |
+| Prompt | starship, `~/.config/starship.toml` (tokyo-night preset) |
+| tmux | `~/.config/tmux/tmux.conf`; TPM + plugins auto-install to `~/.local/share/tmux/plugins` (untracked). powerkit needs Homebrew bash 5 ahead of `/bin` in PATH |
 | Other tracked config | `ghostty/`, `aerospace/`, `borders/`, `bat/`, `~/.claude/` |
 
 Not in this repo: nvim (its own repo at `~/.config/nvim`), plugin code
-(`~/.local/share/fisher`, `~/.local/share/antidote`), history and caches.
+(`~/.local/share/fisher`, `~/.local/share/antidote`, `~/.local/share/tmux/plugins`), history and caches.
 
 ## Parity rule
 
