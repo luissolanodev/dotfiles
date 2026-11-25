@@ -17,6 +17,7 @@ brew "bash"
 brew "gh"
 brew "pnpm"
 brew "awscli"
+brew "go"
 
 # Apps
 cask "ghostty"
